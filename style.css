@@ -1,0 +1,80 @@
+.btn {
+  border-style: solid;
+  border-color: white;
+  background-color: rgba(243, 243, 243, 0.75);
+  outline: none;
+  border-width: 1px;
+  border-radius: 1.5px;
+}
+button::-moz-focus-inner{
+  border: 0;
+}
+.btn:hover {
+  cursor: pointer;
+}
+  
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background: linear-gradient(black, green);
+}
+
+#calculator {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: 75px 75px 75px 75px;
+  grid-template-rows: auto;
+  justify-content: center;
+  border: 3px solid blue;
+  height: 400px;
+}
+  
+
+#display {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  height: auto;
+  background-color: rgb(20, 177, 67);
+  font-size: larger;
+  text-align: right;
+  border-radius: 8px;
+  box-shadow: chartreuse;
+}
+
+#c {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#equals {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+#zero {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+#decimal {
+  grid-row-start: 6;
+}
+#one {
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+#two {
+  grid-column-start: 2;
+}
+#four {
+  grid-column-start: 1;
+}
+#seven {
+  grid-column-start: 1;
+}
+  
+
+  
