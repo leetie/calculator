@@ -164,13 +164,13 @@ for(let i = 0; i < operators.length; i++) {
     //history = history.replace(/+/g,"");
     var outputValue = Number(getOutput());
     
-    if (this.id != "=") {//if history has a value
+    if (this.id != "=" && this.id != "-" && history && this.id != ".") {//if history has a value
       
       output = operate(history, this.id, outputValue);
       updateOutput(output);
     }
 
-    if (this.id == "clear") {updateOutput(""); updateHistory("");}
+    if (this.id == "clear") {updateOutput(""); updateHistory(""); currentOperator = "";}
 
     else if (this.id == "del") {
       var output = getOutput().toString();
@@ -196,8 +196,17 @@ for(let i = 0; i < operators.length; i++) {
 
     if (this.id == "*") {
       currentOperator = "*";
-      history = Number(getHistory());
-      output = Number(getOutput());
+      history = getHistory();
+      output = getOutput();
+      updateHistory(output);
+      updateOutput("");
+    }
+
+    if (this.id == "/") {
+      
+      currentOperator = "/";
+      history = getHistory();
+      output = getOutput();
       updateHistory(output);
       updateOutput("");
     }
@@ -207,9 +216,20 @@ for(let i = 0; i < operators.length; i++) {
       history = Number(getHistory());
       output = Number(getOutput());
       total = operate(history, currentOperator, output);
+      total = total.toFixed(2);
       updateOutput("");
       updateHistory("");
       updateOutput(total);
+      currentOperator = undefined;
+    }
+
+    if (this.id == ".") {
+      history = getHistory();
+      output = getOutput();
+      if (output.includes(".")){return};
+      output += ".";
+      updateOutput(output);
+
     }
     
   });
@@ -242,3 +262,5 @@ function operate (a, operator, b) {
 function equals(history, operator, output) {
   return operate(history, operator, output);
 }
+
+//hitting two operators makes error----decimals on whole integers
