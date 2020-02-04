@@ -46,33 +46,47 @@ body {
   box-shadow: chartreuse;
 }
 
-#c {
+#output-value {
+  
+  margin-bottom: 0;
+  
+  
+}
+
+#history-value {
+  background-color: rgb(16, 133, 51);
+  margin-top: 0;
+}
+
+
+
+#clear {
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
-#equals {
+#\= {
   grid-column-start: 3;
   grid-column-end: 5;
 }
-#zero {
+#\0 {
   grid-column-start: 2;
   grid-column-end: 3;
 }
-#decimal {
+#\. {
   grid-row-start: 6;
 }
-#one {
+#\1 {
   grid-column-start: 1;
   grid-row-start: 5;
 }
-#two {
+#\2 {
   grid-column-start: 2;
 }
-#four {
+#\4 {
   grid-column-start: 1;
 }
-#seven {
+#\7 {
   grid-column-start: 1;
 }
   
